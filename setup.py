@@ -50,11 +50,10 @@ setup(
         "uberwriter"
     ],
     package_data={
-        # 'uberwriter_lib.pylocales' : ['locales.db']
+        'uberwriter_lib.pylocales' : ['locales.db']
     },
     data_files=[
         ('bin/', ['bin/uberwriter']),
-        ('uberwriter_lib/pylocales', ['uberwriter_lib/pylocales/locales.db']),
         ('share/glib-2.0/schemas', ['data/glib-2.0/schemas/net.launchpad.uberwriter.gschema.xml']),
         ('share/icons/hicolor/scalable/apps', ['data/media/uberwriter.svg'])
     ]
