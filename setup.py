@@ -48,6 +48,8 @@ setup(
         # "uberwriter_lib.pressagio",
         "uberwriter_lib",
         "uberwriter"
+        "uberwriter.plugins"
+        "uberwriter.plugins.bibtex"
     ],
     package_data={
         'uberwriter_lib.pylocales' : ['locales.db']
