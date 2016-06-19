@@ -1,0 +1,30 @@
+{
+  "app-id": "de.wolfvollprecht.UberWriter",
+  "runtime": "org.gnome.Platform",
+  "runtime-version": "3.20",
+  "sdk": "org.gnome.Sdk",
+  "command": "uberwriter",
+  "finish-args": [ 
+     "--socket=x11"
+  ],
+  "modules": [
+    {
+      "name": "uberwriter",
+      "sources": [
+        {
+          "type": "folder",
+          "url": "/home/wolfv/Programs/uberwriter"
+        }
+      ]
+    },
+    {
+      "name": "pyenchant",
+      "sources": [
+        {
+          "type": "archive",
+          "url": "https://github.com/rfk/pyenchant/archive/v1.6.6.zip"
+        }
+      ]
+    }
+  ]
+}

@@ -27,7 +27,8 @@ locale.textdomain('uberwriter')
 
 import mimetypes
 
-from gi.repository import Gtk, Gdk, GObject, WebKit, Gio  # pylint: disable=E0611
+from gi.repository import Gtk, Gdk, GObject, Gio  # pylint: disable=E0611
+from gi.repository import WebKit2
 from gi.repository import Pango  # pylint: disable=E0611
 
 import cairo
@@ -79,7 +80,6 @@ class UberwriterWindow(Window):
         'save-file-as': (GObject.SIGNAL_ACTION, None, ()),
         'new-file': (GObject.SIGNAL_ACTION, None, ()),
         'toggle-focusmode': (GObject.SIGNAL_ACTION, None, ()),
-        'toggle-bibtex': (GObject.SIGNAL_ACTION, None, ()),
         'toggle-fullscreen': (GObject.SIGNAL_ACTION, None, ()),
         'toggle-spellcheck': (GObject.SIGNAL_ACTION, None, ()),
         'toggle-preview': (GObject.SIGNAL_ACTION, None, ()),
@@ -691,7 +691,7 @@ class UberwriterWindow(Window):
             output = p.communicate(text)[0]
 
             # Load in Webview and scroll to #ID
-            self.webview = WebKit.WebView()
+            self.webview = WebKit2.WebView()
             self.webview.load_html_string(output.decode("utf-8"), 'file://localhost/')
 
             # Delete the cursor-scroll mark again
