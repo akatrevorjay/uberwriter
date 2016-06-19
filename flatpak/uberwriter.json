@@ -7,6 +7,11 @@
   "finish-args": [ 
      "--socket=x11"
   ],
+  "build-options" : {
+    "env": {
+      "PYTHON": "python3"
+    }
+  },
   "modules": [
     {
       "name": "uberwriter",
@@ -19,13 +24,18 @@
       ]
     },
     {
-      "name": "pyenchant",
-      "sources": [
-        {
-          "type": "archive",
-          "url": "https://github.com/rfk/pyenchant/archive/v1.6.6.zip"
-        }
-      ]
+        "name": "pyenchant",
+        "build-options" : {
+          "build-args": ["--share=network"]
+        },
+        "config-opts": ["--module=pyenchant"],
+        "sources": [
+          {
+              "type": "file",
+              "path": "pip-download",
+              "dest-filename": "configure"
+          }
+        ]
     }
   ]
 }
