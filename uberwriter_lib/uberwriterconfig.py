@@ -55,8 +55,7 @@ def get_data_path():
     """
 
     # Get pathname absolute or relative.
-    path = os.path.join(
-        os.path.dirname(__file__), __uberwriter_data_directory__)
+    path = os.path.join('/opt/uberwriter/data/')
 
     abs_data_path = os.path.abspath(path)
     if not os.path.exists(abs_data_path):

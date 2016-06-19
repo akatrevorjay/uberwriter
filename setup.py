@@ -20,6 +20,20 @@
 ###################### YOU SHOULD MODIFY ONLY WHAT IS BELOW ######################
 ##################################################################################
 from distutils.core import setup
+import os
+
+def package_files(directory):
+    paths = []
+    for (path, directories, filenames) in os.walk(directory):
+        for filename in filenames:
+            paths.append(os.path.join(path, filename))
+    return paths
+
+extra_files_ui = package_files('./data/ui')
+extra_files_media = package_files('./data/media')
+from pprint import pprint
+pprint(extra_files_ui)
+pprint(extra_files_media)
 
 setup(
     name='uberwriter',
@@ -37,10 +51,7 @@ setup(
     url='https://launchpad.com/uberwriter',
     # cmdclass={'install': InstallAndUpdateDataDirectory},
     package_dir = {
-        # 'uberwriter': '.',
-        # 'uberwriter_lib': '.'
-        # 'gtkspellcheck': './uberwriter_lib/gtkspellcheck',
-        # 'pylocales': './uberwriter_lib/pylocales'
+        # "": '/opt/uberwriter/'
     },
     packages=[
         "uberwriter_lib.gtkspellcheck",
@@ -52,11 +63,13 @@ setup(
         # "uberwriter.plugins.bibtex"
     ],
     package_data={
-        'uberwriter_lib.pylocales' : ['locales.db']
+        'uberwriter_lib.pylocales' : ['locales.db'],
     },
     data_files=[
         ('bin/', ['bin/uberwriter']),
         ('share/glib-2.0/schemas', ['data/glib-2.0/schemas/net.launchpad.uberwriter.gschema.xml']),
-        ('share/icons/hicolor/scalable/apps', ['data/media/uberwriter.svg'])
+        ('share/icons/hicolor/scalable/apps', ['data/media/uberwriter.svg']),
+        ('opt/uberwriter/data/ui', extra_files_ui),
+        ('opt/uberwriter/data/media', extra_files_media)
     ]
 )
