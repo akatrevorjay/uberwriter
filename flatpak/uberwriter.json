@@ -24,18 +24,18 @@
       ]
     },
     {
-        "name": "pyenchant",
-        "build-options" : {
-          "build-args": ["--share=network"]
-        },
-        "config-opts": ["--module=pyenchant"],
-        "sources": [
-          {
-              "type": "file",
-              "path": "pip-download",
-              "dest-filename": "configure"
-          }
-        ]
+      "name": "pyenchant",
+      "build-options" : {
+        "build-args": ["--share=network"]
+      },
+      "config-opts": ["--module=pyenchant"],
+      "sources": [
+        {
+            "type": "file",
+            "path": "pip-download",
+            "dest-filename": "configure"
+        }
+      ]
     }
   ]
 }
