@@ -43,8 +43,8 @@ setup(
         # 'pylocales': './uberwriter_lib/pylocales'
     },
     packages=[
-        # "gtkspellcheck",
-        # "uberwriter_lib.pylocales",
+        "uberwriter_lib.gtkspellcheck",
+        "uberwriter_lib.pylocales",
         # "uberwriter_lib.pressagio",
         "uberwriter_lib",
         "uberwriter"

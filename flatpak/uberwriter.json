@@ -36,6 +36,35 @@
             "dest-filename": "configure"
         }
       ]
+    },
+    {
+      "name": "regex",
+      "build-options" : {
+        "build-args": ["--share=network"]
+      },
+      "config-opts": ["--module=regex"],
+      "sources": [
+        {
+            "type": "file",
+            "path": "pip-download",
+            "dest-filename": "configure"
+        }
+      ]
+    },
+    {
+      "name": "python-Levenshtein",
+      "build-options" : {
+        "build-args": ["--share=network"]
+      },
+      "config-opts": ["--module=python-Levenshtein"],
+      "sources": [
+        {
+            "type": "file",
+            "path": "pip-download",
+            "dest-filename": "configure"
+        }
+      ]
     }
+
   ]
 }
