@@ -12,8 +12,9 @@
       "name": "uberwriter",
       "sources": [
         {
-          "type": "folder",
-          "url": "/home/wolfv/Programs/uberwriter"
+          "type": "git",
+          "url": "git://github.com/wolfv/uberwriter",
+          "branch": "flatpak"
         }
       ]
     },
