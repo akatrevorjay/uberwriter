@@ -1149,7 +1149,9 @@ class UberwriterWindow(Window):
         self.gtk_settings = Gtk.Settings.get_default()
         self.load_settings(builder)
 
-        self.plugins = [BibTex(self)]
+        self.plugins = [
+            #BibTex(self)
+        ]
 
         # self.connect_after('realize', self.color_window)
 
