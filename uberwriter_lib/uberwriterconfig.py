@@ -61,7 +61,7 @@ def get_data_path():
     # if not os.path.exists(abs_data_path):
     #     raise project_path_not_found
 
-    return abs_data_path
+    return path
 
 
 def get_version():
