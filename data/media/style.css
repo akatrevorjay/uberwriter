@@ -43,7 +43,7 @@
 }
 
 .uberwriter_window.small .uberwriter-editor {
-  font: Inconsolata 12;
+  font-family: Inconsolata; font-size: 12px;
 }
 .uberwriter_window GtkGrid {
   background-color: @light_editor_bg;
@@ -55,13 +55,13 @@
 }
 
 #UberwriterWindow.medium .uberwriter-editor {
-  font: Fira Mono  15;
+  font-family: Fira Mono ; font-size: 15px;
 }
 
 #UberwriterWindow.large .uberwriter-editor {
   /*font: Inconsolata 17;
   */
-  font: Fira Mono 12;
+  font-family: Fira Mono; font-size: 12px;
 }
 
 #UberwriterWindow GtkAlignment {
@@ -191,7 +191,7 @@
 }
 
 #LexikonBubble {
-  font: serif 10;
+  font-family: serif; font-size: 10px;
   background: #FFF;
   border-radius: 4px;
   margin: 5px;
@@ -215,7 +215,7 @@
 }
 
 #LexikonBubble .lexikon_heading {
-  font: serif 12;
+  font-family: serif; font-size: 12px;
   padding-bottom: 5px;
   padding-top: 5px;
   font-weight: bold;
@@ -238,7 +238,7 @@
 
 #UberwriterWindow #AutoCorrect GtkLabel {
   padding: 3px 5px;
-  font: sans-serif;
+  font-family: sans-serif;
 }
 
 #UberwriterWindow #AutoCorrect GtkImage {

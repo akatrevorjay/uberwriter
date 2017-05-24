@@ -1,3 +1,5 @@
+import os
+
 from gi.repository import Gtk, Gio
 
 from . import bibtexparser
@@ -6,7 +8,7 @@ from . import fuzzywuzzy
 from .gi_composites import GtkTemplate
 
 
-@GtkTemplate(ui='/home/wolfv/Programs/uberwriter/uberwriter/plugins/bibtex/bibtex_item.glade')
+@GtkTemplate(ui=os.path.join(os.path.dirname(__file__), 'bibtex_item.glade'))
 class BibTexItem(Gtk.Box):
 
     __gtype_name__ = 'BibTexItem'
@@ -64,11 +66,11 @@ class BibTex(object):
     def __init__(self, app):
         self.app = app
         self.app.connect('toggle_bibtex', self.open_bibtex)
-        with open('/home/wolfv/ownCloud/Studium/Semester Project/Report/listb.bib') as f:
+        with open(os.path.expanduser('~/uberwriter/listb.bib')) as f:
             self.bib_db = bibtexparser.load(f)
 
         builder = Gtk.Builder()
-        builder.add_from_file('/home/wolfv/Programs/uberwriter/uberwriter/plugins/bibtex/bibtex.glade')
+        builder.add_from_file(os.path.join(os.path.dirname(__file__), 'bibtex.glade'))
         self.window = builder.get_object('bibtex_window')
         self.window.set_transient_for(self.app)
         self.window.set_modal(True)

@@ -27,6 +27,10 @@ locale.textdomain('uberwriter')
 
 import mimetypes
 
+import gi
+gi.require_version('Gtk', '3.0')
+gi.require_version('WebKit', '3.0')
+
 from gi.repository import Gtk, Gdk, GObject, WebKit, Gio  # pylint: disable=E0611
 from gi.repository import Pango  # pylint: disable=E0611
 
